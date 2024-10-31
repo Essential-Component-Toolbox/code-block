@@ -1,6 +1,5 @@
-import { html, css, LitElement } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-
 export class CodeBlock extends LitElement {
   static styles = css`
     :host {
@@ -33,16 +32,26 @@ export class CodeBlock extends LitElement {
 
   @property({ type: Boolean, attribute: 'copy-alert', reflect: true }) copyAlert = false;
 
-  // TODO make dependencyAlert property
+  @property({ type: Boolean, attribute: 'dependency-alert', reflect: true }) dependencyAlert = false;
 
-  // TODO make copyToClipboard() function
-  // __increment() {
-  //   this.counter += 1;
-  // }
+
+  _copyToClipboard() {
+    if (this.allowCopy) {
+      const text = this.innerText;
+      navigator.clipboard.writeText(text);
+      if (this.copyAlert) alert(`Copied text to clipboard!`);
+    }
+  }
+
+  _handleKeyPress(e: KeyboardEvent) {
+    if (e.key === 'Enter') {
+      this._copyToClipboard();
+    }
+  }
 
   render() {
     return html`
-      <div class="code-block-wrapper">
+      <div class="code-block-wrapper" @click=${this._copyToClipboard} @keypress=${this._handleKeyPress} tabindex="0">
         <p><slot></slot></p>
       </div>
     `;

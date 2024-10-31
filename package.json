@@ -1,5 +1,5 @@
 {
-  "name": "code-block",
+  "name": "@htmlplusplus/code-block",
   "description": "Webcomponent code-block following open-wc recommendations",
   "license": "MIT",
   "author": "code-block",
@@ -30,5 +30,6 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json",
+  "types": "./dist/src/index.d.ts"
 }
