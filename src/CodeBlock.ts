@@ -1,5 +1,6 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, svg } from 'lit';
 import { property } from 'lit/decorators.js';
+
 export class CodeBlock extends LitElement {
   static styles = css`
     :host {
@@ -26,6 +27,10 @@ export class CodeBlock extends LitElement {
       background-color: #2e2e2e;
       border-width: 2px;
     }
+
+    .copy-icon {
+      width: 32px;
+    }
   `;
 
   @property({ type: Boolean, attribute: 'allow-copy', reflect: true }) allowCopy = false;
@@ -51,8 +56,13 @@ export class CodeBlock extends LitElement {
 
   render() {
     return html`
-      <div class="code-block-wrapper" @click=${this._copyToClipboard} @keypress=${this._handleKeyPress} tabindex="0">
+      <div class="code-block-wrapper">
         <p><slot></slot></p>
+        ${this.allowCopy ? html`
+          <div class="copy-wrapper" @click=${this._copyToClipboard} tabindex="0" @keypress=${this._handleKeyPress}>
+            <img src="../lib/copy-icon.svg" alt="Copy Icon" class="copy-icon">
+          </div>
+        ` : ''}
       </div>
     `;
   }
