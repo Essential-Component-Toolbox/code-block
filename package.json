@@ -18,10 +18,13 @@
     "prepublish": "tsc && npm run analyze -- --exclude dist"
   },
   "dependencies": {
-    "lit": "^3.1.4"
+    "@types/minimist": "^1.2.5",
+    "lit": "^3.1.4",
+    "normalize-package-data": "^7.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.10.3",
+    "@types/normalize-package-data": "^2.4.4",
     "@web/dev-server": "^0.4.6",
     "concurrently": "^8.2.2",
     "tslib": "^2.6.3",
