@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <style>
     body {
-      background: #fafafa;
+      background: #121212;
     }
   </style>
+  <script type="module" src="../dist/src/code-block.js"></script>
 </head>
 <body>
-  <div id="demo"></div>
+  <code-block allow-copy>npm install...</code-block>
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../dist/src/code-block.js';
 
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <code-block .header=${header}>
-          some light-dom
-        </code-block>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+  <!-- <div id="light-bg">
+    <code-block>npm install...</code-block>
+  </div>
+
+  <div id="allowCopy">
+    <code-block>npm install...</code-block>
+  </div> -->
+
+  <!-- TODO remove below demo code if everything works in the end -->
 </body>
 </html>
