@@ -5,6 +5,11 @@ export class CodeBlock extends LitElement {
   static styles = css`
     :host {
       display: inline-block;
+      --theme-border-color: #88887a;
+    }
+
+    :host([dark-mode]) {
+      --theme-border-color: white;
     }
 
     .code-block-wrapper {
@@ -15,8 +20,8 @@ export class CodeBlock extends LitElement {
       color: white;
       padding: 0px 12px;
       border-style: solid;
-      border-color: white;
-      border-width: 1px;
+      border-color: var(--theme-border-color);
+      border-width: 2px;
       border-radius: 8px;
       font-size: 16px;
       font-family: monospace;
@@ -57,7 +62,7 @@ export class CodeBlock extends LitElement {
 
   @property({ type: Boolean, attribute: 'copy-alert', reflect: true }) copyAlert = false;
 
-  @property({ type: Boolean, attribute: 'dependency-alert', reflect: true }) dependencyAlert = false;
+  @property({ type: Boolean, attribute: 'dark-mode', reflect: true }) darkMode = false;
 
 
   _copyToClipboard() {
@@ -65,6 +70,7 @@ export class CodeBlock extends LitElement {
       const text = this.innerText;
       navigator.clipboard.writeText(text);
       if (this.copyAlert) alert(`Copied text to clipboard!`);
+      this._changeIcon();
     }
   }
 
@@ -76,11 +82,18 @@ export class CodeBlock extends LitElement {
     }
   }
 
+  // TODO for some reason something is not working here :()
   _mimicActiveCSS(e: KeyboardEvent) {
     const img = e.target as HTMLImageElement;
     console.log(img);
     img.classList.add('active-mimic');
     setTimeout(() => img.classList.remove('active-mimic'), 1000);
+  }
+
+  _changeIcon() {
+    const img = this.shadowRoot?.querySelector('img') as HTMLImageElement;
+    img.setAttribute('src', '../lib/check-icon.svg');
+    setTimeout(() => img.setAttribute('src', '../lib/copy-icon.svg'), 1000);
   }
 
   render() {

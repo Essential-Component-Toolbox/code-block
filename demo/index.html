@@ -7,21 +7,29 @@
     body {
       background: #121212;
     }
+
+    .light-mode {
+      background-color: #fff;
+    }
+
+    div {
+      margin-bottom: 32px;
+      padding: 24px;
+    }
   </style>
   <script type="module" src="../dist/src/code-block.js"></script>
 </head>
 <body>
-  <code-block allow-copy>npm install...</code-block>
-
-
-  <!-- <div id="light-bg">
-    <code-block>npm install...</code-block>
+  <div id="demo">
+    <code-block dark-mode>dark mode attribute</code-block>
   </div>
 
-  <div id="allowCopy">
-    <code-block>npm install...</code-block>
-  </div> -->
+  <div class="light-mode">
+    <code-block>Light mode (this is the default, no attributes)</code-block>
+  </div>
 
-  <!-- TODO remove below demo code if everything works in the end -->
+  <div class="allow-copy">
+    <code-block allow-copy>npm install @htmlplusplus/code-block</code-block>
+  </div>
 </body>
 </html>
