@@ -59,17 +59,12 @@ export class CodeBlock extends LitElement {
   `;
 
   @property({ type: Boolean, attribute: 'allow-copy', reflect: true }) allowCopy = false;
-
-  @property({ type: Boolean, attribute: 'copy-alert', reflect: true }) copyAlert = false;
-
   @property({ type: Boolean, attribute: 'dark-mode', reflect: true }) darkMode = false;
-
 
   _copyToClipboard() {
     if (this.allowCopy) {
       const text = this.innerText;
       navigator.clipboard.writeText(text);
-      if (this.copyAlert) alert(`Copied text to clipboard!`);
       this._changeIcon();
     }
   }

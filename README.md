@@ -8,7 +8,9 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 npm i @htmlplusplus/code-block
 ```
 
-## Usage
+## Import
+
+### HTML
 
 ```html
 <!-- Import into HTML -->
@@ -16,15 +18,32 @@ npm i @htmlplusplus/code-block
   import '@htmlplusplus/code-block/code-block.js';
 </script>
 
+<!-- OR -->
+<script type="module" src="@htmlplusplus/code-block/code-block.js"></script>
+
+<!-- Place the below tag into your HTML -->
 <code-block></code-block>
 ```
+
+### JavaScript / TypeScript
 
 ```JavaScript
 // import into an existing JS module / web component
 import '@htmlplusplus/code-block/code-block.js';
 ```
 
+## Usage
 
+### Attributes
+
+```HTML
+<!-- Will enable a "Copy" button on the right side of the component, 
+ which will copy component contents to clipboard -->
+<code-block allow-copy></code-block>
+
+<!-- Border will be white instead of gray -->
+<code-block dark-mode></code-block>
+```
 
 ## Tooling configs
 
