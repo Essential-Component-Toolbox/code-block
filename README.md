@@ -11,11 +11,17 @@ npm i @htmlplusplus/code-block
 ## Usage
 
 ```html
+<!-- Import into HTML -->
 <script type="module">
-  import 'code-block/code-block.js';
+  import '@htmlplusplus/code-block/code-block.js';
 </script>
 
 <code-block></code-block>
+```
+
+```JavaScript
+// import into an existing JS module / web component
+import '@htmlplusplus/code-block/code-block.js';
 ```
 
 

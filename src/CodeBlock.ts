@@ -82,7 +82,7 @@ export class CodeBlock extends LitElement {
     }
   }
 
-  // TODO for some reason something is not working here :()
+  // TODO for some reason something is not working here for allowing the .active-mimic to work :(
   _mimicActiveCSS(e: KeyboardEvent) {
     const img = e.target as HTMLImageElement;
     console.log(img);

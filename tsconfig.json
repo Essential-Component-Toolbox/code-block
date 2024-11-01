@@ -16,7 +16,11 @@
     "rootDir": "./",
     "declaration": true,
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
+    }
   },
   "include": ["**/*.ts"]
 }
