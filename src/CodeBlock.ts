@@ -1,4 +1,4 @@
-import { css, html, LitElement, svg } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class CodeBlock extends LitElement {

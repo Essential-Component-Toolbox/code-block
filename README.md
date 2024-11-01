@@ -2,15 +2,23 @@
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
-## Installation
+## Description
+
+Web component that formats text to appear in a box similar to a code block in markdown, with optional copy functionality.
+
+---
+
+## Getting Started
+
+### Installation
 
 ```bash
 npm i @htmlplusplus/code-block
 ```
 
-## Import
+### Import
 
-### HTML
+#### HTML
 
 ```html
 <!-- Import into HTML -->
@@ -25,12 +33,14 @@ npm i @htmlplusplus/code-block
 <code-block></code-block>
 ```
 
-### JavaScript / TypeScript
+#### JavaScript / TypeScript
 
 ```JavaScript
 // import into an existing JS module / web component
 import '@htmlplusplus/code-block/code-block.js';
 ```
+
+---
 
 ## Usage
 
@@ -45,11 +55,15 @@ import '@htmlplusplus/code-block/code-block.js';
 <code-block dark-mode></code-block>
 ```
 
+---
+
 ## Tooling configs
 
 For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
 
 If you customize the configuration a lot, you can consider moving them to individual files.
+
+---
 
 ## Local Demo with `web-dev-server`
 
