@@ -22,14 +22,34 @@ export class CodeBlock extends LitElement {
       font-family: monospace;
     }
 
-    :host([allow-copy]) .code-block-wrapper:hover, :host([allow-copy]) .code-block-wrapper:focus {
+    .copy-wrapper {
+      width: 36px;
+      margin-left: 16px;
+    }
+
+    :host([allow-copy]) .copy-wrapper:hover, :host([allow-copy]) .copy-wrapper:focus-visible {
       cursor: pointer;
-      background-color: #2e2e2e;
+      border-style: solid;
+      border-width: 1px;
+      width: 34px;
+    }
+
+    :host([allow-copy]) .copy-wrapper:active {
       border-width: 2px;
+      width: 32px;
+    }
+
+    .active-mimic {
+      border-width: 2px;
+      width: 32px;
     }
 
     .copy-icon {
-      width: 32px;
+      pointer-events: none; /* TODO bug still technically getting dragged, causes weird shape issues */
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
   `;
 
@@ -51,7 +71,16 @@ export class CodeBlock extends LitElement {
   _handleKeyPress(e: KeyboardEvent) {
     if (e.key === 'Enter') {
       this._copyToClipboard();
+      e.preventDefault();
+      this._mimicActiveCSS(e);
     }
+  }
+
+  _mimicActiveCSS(e: KeyboardEvent) {
+    const img = e.target as HTMLImageElement;
+    console.log(img);
+    img.classList.add('active-mimic');
+    setTimeout(() => img.classList.remove('active-mimic'), 1000);
   }
 
   render() {
