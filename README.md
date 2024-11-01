@@ -6,6 +6,9 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 Web component that formats text to appear in a box similar to a code block in markdown, with optional copy functionality.
 
+* [NPM](https://www.npmjs.com/package/@htmlplusplus/code-block)
+* [GitHub](https://github.com/htmlplusplus/code-block)
+
 ---
 
 ## Getting Started

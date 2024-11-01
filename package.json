@@ -3,7 +3,7 @@
   "description": "Webcomponent code-block following open-wc recommendations",
   "license": "MIT",
   "author": "Zach Dodson",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
